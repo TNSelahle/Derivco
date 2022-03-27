@@ -11,10 +11,12 @@ namespace Roulette.DataAccess.Repositories
     public class UnitOfWork : IUnitOfWork
     {
         public IBetRepository Bets { get; }
+        public ISpinRepository Spins { get; }
 
-        public UnitOfWork(IBetRepository betRepository)
+        public UnitOfWork(IBetRepository betRepository, ISpinRepository spinRepository)
         {
             Bets = betRepository;
+            Spins = spinRepository;
         }
     }
 }

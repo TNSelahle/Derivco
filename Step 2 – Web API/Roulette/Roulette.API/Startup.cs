@@ -30,6 +30,7 @@ namespace Roulette.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IBetRepository, BetRepository>();
+            services.AddTransient<ISpinRepository, SpinRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             services.AddControllers();

@@ -10,5 +10,6 @@ namespace Roulette.Application.Interfaces
     public interface IUnitOfWork
     {
         IBetRepository Bets { get; }
+        ISpinRepository Spins { get; }
     }
 }

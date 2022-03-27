@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Roulette.Application.Interfaces;
 using Roulette.Domain.Models;
+using System;
 using System.Threading.Tasks;
 
 namespace Roulette.API.Controllers
@@ -11,6 +12,7 @@ namespace Roulette.API.Controllers
     public class RouletteController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly Random rnd = new Random();
 
         public RouletteController(IUnitOfWork unitOfWork)
         {
@@ -31,7 +33,16 @@ namespace Roulette.API.Controllers
             return new OkResult();
         }
 
+        [HttpGet]
+        [Route("Spin")]
+        public async Task<int> Spin()
+        {
+            var spin = rnd.Next(37);
 
+            await _unitOfWork.Spins.AddAsync(new Spin { Value = spin });
+
+            return spin;
+        }
     }
 
 }

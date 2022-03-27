@@ -15,6 +15,11 @@ namespace Roulette.DataAccess.Helpers
             "Type INTEGER NOT NULL," +
             "Value VARCHAR(20) NOT NULL)";
 
+        public const string SpinsCreateSql = "CREATE TABLE Spins (" +
+            "ID INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "Value INTEGER NOT NULL," +
+            "DateCreated DATETIME DEFAULT CURRENT_TIMESTAMP)";
+
         public static async void EnsureTableExists(this SqliteConnection connection, string table)
         {
             if (connection == null) return;
@@ -29,6 +34,9 @@ namespace Roulette.DataAccess.Helpers
                     case "bets":
                         await connection.ExecuteAsync(BetsCreateSql);
                         break;
+                    case "spins":
+                        await connection.ExecuteAsync(SpinsCreateSql);
+                            break;
                 }
             }
         }
