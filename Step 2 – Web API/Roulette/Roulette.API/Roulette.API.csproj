@@ -10,6 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Roulette.Application\Roulette.Application.csproj" />
+    <ProjectReference Include="..\Roulette.DataAccess\Roulette.DataAccess.csproj" />
     <ProjectReference Include="..\Roulette.Domain\Roulette.Domain.csproj" />
   </ItemGroup>
 

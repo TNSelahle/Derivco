@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Roulette.API", "Roulette.AP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roulette.Domain", "Roulette.Domain\Roulette.Domain.csproj", "{17336228-5D0A-4A90-AFA0-D0E8C8F0DF2D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roulette.Application", "Roulette.Application\Roulette.Application.csproj", "{E6E317F2-F4AC-4244-B761-EC5420CBA814}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roulette.DataAccess", "Roulette.DataAccess\Roulette.DataAccess.csproj", "{FE2FCB3D-9C11-4C2A-9F40-50D0EB0ECD57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{17336228-5D0A-4A90-AFA0-D0E8C8F0DF2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17336228-5D0A-4A90-AFA0-D0E8C8F0DF2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17336228-5D0A-4A90-AFA0-D0E8C8F0DF2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6E317F2-F4AC-4244-B761-EC5420CBA814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6E317F2-F4AC-4244-B761-EC5420CBA814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6E317F2-F4AC-4244-B761-EC5420CBA814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6E317F2-F4AC-4244-B761-EC5420CBA814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE2FCB3D-9C11-4C2A-9F40-50D0EB0ECD57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE2FCB3D-9C11-4C2A-9F40-50D0EB0ECD57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE2FCB3D-9C11-4C2A-9F40-50D0EB0ECD57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE2FCB3D-9C11-4C2A-9F40-50D0EB0ECD57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
