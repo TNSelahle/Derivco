@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Roulette.DataAccess.Helpers;
 
 namespace Roulette.DataAccess.Repositories
 {
@@ -19,6 +20,8 @@ namespace Roulette.DataAccess.Repositories
         public BetRepository(IConfiguration configuration)
         {
             _configuration = configuration;
+            using var connection = new SqliteConnection(_configuration.GetConnectionString("RouletteDb"));
+            connection.EnsureTableExists("Bets");
         }
 
         public async Task AddAsync(Bet bet)

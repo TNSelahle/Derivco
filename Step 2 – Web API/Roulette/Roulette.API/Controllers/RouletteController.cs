@@ -17,9 +17,8 @@ namespace Roulette.API.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        [HttpGet]
-        [ApiVersion("1.0")]
-        [Route("api/v{version:apiVersion}/PlaceBet")]
+        [HttpPost]
+        [Route("PlaceBet")]
         public async Task<IActionResult> PlaceBet(Bet bet)
         {
             if (!ModelState.IsValid)
@@ -31,6 +30,8 @@ namespace Roulette.API.Controllers
 
             return new OkResult();
         }
+
+
     }
 
 }

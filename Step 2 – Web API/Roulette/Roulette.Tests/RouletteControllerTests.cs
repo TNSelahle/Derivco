@@ -28,6 +28,8 @@ namespace Roulette.Tests
             _rouletteController = new RouletteController(_unitOfWork);
         }
 
+        #region PlaceBet
+
         [Test]
         public void PlaceBetShouldReturnSuccessStatusCodeIfParametersAreCorrect()
         {
@@ -104,5 +106,9 @@ namespace Roulette.Tests
             Assert.That(response.Result as OkResult, Is.TypeOf<OkResult>());
             _betRepoMock.Verify(x => x.AddAsync(bet), Times.Once());
         }
+
+        #endregion
+
+
     }
 }
