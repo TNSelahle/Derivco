@@ -25,16 +25,22 @@ namespace Roulette.DataAccess.Repositories
         }
         public async Task AddAsync(Spin spin)
         {
-            var sql = "INSERT INTO Spins (Value, DateCreated) VALUES (@Value, @DateCreated)";
+            var sql = "INSERT INTO Spins (Value) VALUES (@Value)";
 
             using var connection = new SqliteConnection(_configuration.GetConnectionString("RouletteDb"));
 
             await connection.ExecuteAsync(sql, spin);
         }
 
-        public Task<IEnumerable<Spin>> GetAllAsync()
+        public async Task<IEnumerable<Spin>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var sql = "SELECT ID, Value, DateCreated FROM Spins";
+
+            using var connection = new SqliteConnection(_configuration.GetConnectionString("RouletteDb"));
+
+            var res = await connection.QueryAsync<Spin>(sql);
+
+            return res;
         }
     }
 }

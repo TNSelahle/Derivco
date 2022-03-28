@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Roulette.Application.Interfaces;
 using Roulette.Domain.Models;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Roulette.API.Controllers
@@ -35,13 +35,20 @@ namespace Roulette.API.Controllers
 
         [HttpGet]
         [Route("Spin")]
-        public async Task<int> Spin()
+        public async Task<ActionResult<int>> Spin()
         {
             var spin = rnd.Next(37);
 
             await _unitOfWork.Spins.AddAsync(new Spin { Value = spin });
 
-            return spin;
+            return new OkObjectResult(spin);
+        }
+
+        [HttpGet]
+        [Route("Spin/History")]
+        public async Task<ActionResult<IEnumerable<Spin>>> ShowPreviousSpins()
+        {
+            return new OkObjectResult(await _unitOfWork.Spins.GetAllAsync());
         }
     }
 

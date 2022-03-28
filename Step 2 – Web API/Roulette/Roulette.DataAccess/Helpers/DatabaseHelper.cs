@@ -18,7 +18,7 @@ namespace Roulette.DataAccess.Helpers
         public const string SpinsCreateSql = "CREATE TABLE Spins (" +
             "ID INTEGER PRIMARY KEY AUTOINCREMENT," +
             "Value INTEGER NOT NULL," +
-            "DateCreated DATETIME DEFAULT CURRENT_TIMESTAMP)";
+            "DateCreated DATETIME DEFAULT (DATETIME('now','localtime')))";
 
         public static async void EnsureTableExists(this SqliteConnection connection, string table)
         {

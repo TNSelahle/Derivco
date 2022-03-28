@@ -10,6 +10,6 @@ namespace Roulette.Domain.Models
     {
         public int Id { get; set; }
         public int Value { get; set; }
-        public DateTimeOffset DateCreated { get; set; }
+        public DateTime DateCreated { get; set; }
     }
 }
